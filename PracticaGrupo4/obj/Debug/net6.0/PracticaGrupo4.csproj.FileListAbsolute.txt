@@ -1,0 +1,15 @@
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\bin\Debug\net6.0\PracticaGrupo4.exe
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\bin\Debug\net6.0\PracticaGrupo4.deps.json
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\bin\Debug\net6.0\PracticaGrupo4.runtimeconfig.json
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\bin\Debug\net6.0\PracticaGrupo4.dll
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\bin\Debug\net6.0\PracticaGrupo4.pdb
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.csproj.AssemblyReference.cache
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.AssemblyInfoInputs.cache
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.AssemblyInfo.cs
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.csproj.CoreCompileInputs.cache
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.dll
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\refint\PracticaGrupo4.dll
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.pdb
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\PracticaGrupo4.genruntimeconfig.cache
+C:\Users\eljos\Desktop\UFV\Programacion\RepositorioPOO\PracticaGrupo4\obj\Debug\net6.0\ref\PracticaGrupo4.dll
