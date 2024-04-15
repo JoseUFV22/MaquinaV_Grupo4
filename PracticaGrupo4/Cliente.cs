@@ -5,6 +5,7 @@ namespace PracticaGrupo4
         public override void Test()
         {
             Console.WriteLine("SI VES ESTO ES QUE EL USUARIO ES CLIENTE");
+            Thread.Sleep(5000);
         }
     }
 }
