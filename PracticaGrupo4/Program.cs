@@ -21,7 +21,8 @@
                 do
                 {
                     Console.Clear();
-                    Console.WriteLine(Portada.introducir_Portada());
+                    Portada.introducir_Portada();
+                    
                     Console.WriteLine("");
                     Console.WriteLine("+----------UFV VENDING MACHINE----------+");
                     Console.WriteLine("Elige una opción:");
