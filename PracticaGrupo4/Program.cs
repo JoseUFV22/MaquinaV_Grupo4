@@ -6,7 +6,7 @@
 
         static void Main()
         {
-            Menu();
+           
         }
 
         public static void Menu()
