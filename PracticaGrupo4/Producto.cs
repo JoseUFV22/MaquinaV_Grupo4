@@ -6,12 +6,16 @@ namespace PracticaGrupo4
         public int Cantidad {get; set;}
         public double Precio {get; set;}
         public string? Descripcion {get; set;}
-
+        public int ID {get; set;}
         
-
-        public string Mostrar_info()
+        public string Mostrar_Info()
         {
-            return $"Producto: {Nombre}, Cantidad: {Cantidad}\n Precio: {Precio}, Descripción:{Descripcion}";
+            return $"ID:[{ID}] Producto: {Nombre}, Cantidad: {Cantidad}";
+        }
+
+        public string Mostrar_Info_Completa()
+        {
+            return $"ID:[{ID}] Producto: {Nombre}, Cantidad: {Cantidad}\n Precio: {Precio}, Descripción:{Descripcion}";
         }
     }
 }

@@ -47,6 +47,7 @@
                     case 3:
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);    //Settea al usuario como "Admin" o "Cliente"
                     usuarioLogeado.Añadir_Producto(productos_Maquina);
+                    Menu();
                     break;
 
                     //Admin
