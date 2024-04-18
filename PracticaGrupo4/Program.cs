@@ -1,8 +1,9 @@
 ﻿namespace PracticaGrupo4
 {
-    class Program
+    internal class Program
     {
         static Usuario usuarioLogeado = new Usuario();
+        static List<Producto> productos_Maquina = new List<Producto>{};
 
         static void Main()
         {
@@ -39,13 +40,13 @@
                     break;
 
                     case 2:
+                    //Hacer método
                     break;
 
                     //Admin
                     case 3:
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);    //Settea al usuario como "Admin" o "Cliente"
-                    usuarioLogeado.Test();
-                    Menu();
+                    usuarioLogeado.Añadir_Producto(productos_Maquina);
                     break;
 
                     //Admin

@@ -2,13 +2,21 @@ using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 #pragma warning disable CS8603
 
+
 namespace PracticaGrupo4
 {
     public class Usuario
     {
+        //Atributos
         private string contrasena = "123";
 
-        public virtual void Test(){}
+
+        //Constructores
+        public Usuario(){}
+
+
+        //Metodos
+        public virtual void Añadir_Producto(List<Producto> productos_maquina){}
 
         public Usuario AutenticacionAdmin(Usuario usuario)
         {

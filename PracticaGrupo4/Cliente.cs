@@ -2,10 +2,10 @@ namespace PracticaGrupo4
 {
     class Cliente : Usuario
     {
-        public override void Test()
-        {
-            Console.WriteLine("SI VES ESTO ES QUE EL USUARIO ES CLIENTE");
-            Thread.Sleep(5000);
-        }
+        public override void Añadir_Producto(List<Producto> productos_Maquina){}
+        
+
+
+
     }
 }
