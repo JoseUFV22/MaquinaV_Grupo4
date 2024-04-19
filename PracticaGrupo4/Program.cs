@@ -21,9 +21,10 @@
                 do
                 {
                     Console.Clear();
+                    Portada.Cambiar_Color();
                     Portada.introducir_Portada();
                     
-                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("+----------UFV VENDING MACHINE----------+");
                     Console.WriteLine("Elige una opción:");
                     Console.WriteLine("(1) Comprar productos");
@@ -31,7 +32,9 @@
                     Console.WriteLine("(3) Recargar un producto (Admin)");
                     Console.WriteLine("(4) Recargar todos los productos (Admin)");
                     Console.WriteLine("(5) SALIR");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write($"\n</{nombreUsuario}/>>> ");
+                    Console.ForegroundColor = ConsoleColor.White;
                     respuestaMenu = int.Parse(Console.ReadKey().KeyChar.ToString());   //Convierte de 'System.ConsoleKeyInfo' a 'Char' a 'String' a 'Int'
 
                 } while (respuestaMenu < 1 || respuestaMenu > 5);
