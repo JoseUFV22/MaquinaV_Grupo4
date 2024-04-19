@@ -21,6 +21,7 @@ namespace PracticaGrupo4
                 do
                 {
                     Console.WriteLine("Añadir un nuevo producto[1] / Reponer un producto[2]");
+                    Console.Write($"\n</{Program.nombreUsuario}/>>> ");
                     respuesta = int.Parse(Console.ReadLine());
                 }
                 while(respuesta < 1 || respuesta > 2);
@@ -51,7 +52,9 @@ namespace PracticaGrupo4
                         productoNuevo.Descripcion = Console.ReadLine();
 
                         productos_Maquina.Add(productoNuevo);
-                        Console.WriteLine($"Producto: {productoNuevo.Nombre}, añadido");
+                        Console.WriteLine($"[Producto: {productoNuevo.Nombre}, añadido]");
+                        Console.WriteLine("Regresando al Menú...");
+                        Thread.Sleep(1500);
                     }
                     break;
 
@@ -61,7 +64,10 @@ namespace PracticaGrupo4
                     //Si no hay productos
                     if (productos_Maquina.Count == 0)
                     {
+                        Console.Clear();
                         Console.WriteLine("No hay productos...");
+                        Console.WriteLine("Regresando al Menú...");
+                        Thread.Sleep(1700);
                     }
 
                     else
@@ -93,7 +99,7 @@ namespace PracticaGrupo4
                             productoVacio.Cantidad += cantidadNueva;
 
                             Console.WriteLine($"{productoVacio.Nombre} ahora tiene: {productoVacio.Cantidad} unidades");
-                            Thread.Sleep(3000);
+                            Thread.Sleep(2500);
                         }
 
                         else

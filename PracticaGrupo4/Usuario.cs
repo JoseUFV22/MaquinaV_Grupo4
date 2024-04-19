@@ -25,13 +25,17 @@ namespace PracticaGrupo4
             {
                 string? contrasenaIntento;
 
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("\nIntroduce la contraseña de administrador: ");
+                Console.ForegroundColor = ConsoleColor.White;
                 contrasenaIntento = Console.ReadLine();
 
                 if (contrasena == contrasenaIntento)
                 {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("[Autenticado]");
+                    Console.ForegroundColor = ConsoleColor.White;
                     return new Admin();                  //Se identifica al usuario como Admin
                 }
 

@@ -4,6 +4,7 @@
     {
         static Usuario usuarioLogeado = new Usuario();
         static List<Producto> productos_Maquina = new List<Producto>{};
+        public static string nombreUsuario = Environment.UserName;
 
         static void Main()
         {
@@ -13,7 +14,7 @@
         public static void Menu()
         {
             //Lee el nombre del usuario
-            string nombreUsuario = Environment.UserName;
+            //string nombreUsuario = Environment.UserName;
             int respuestaMenu;
 
             try
