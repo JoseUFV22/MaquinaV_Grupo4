@@ -46,7 +46,7 @@
                     break;
 
                     case 2:
-                    //Hacer método
+                    //dldld
                     break;
 
                     //Admin
