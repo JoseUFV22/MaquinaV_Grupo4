@@ -1,4 +1,6 @@
-﻿namespace PracticaGrupo4
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace PracticaGrupo4
 {
     internal class Program
     {
@@ -47,7 +49,8 @@
                     break;
 
                     case 2:
-                    //dldld
+                        MostarInfoProd(); //Muestra la info de todos los productos 
+                        Menu();
                     break;
 
                     //Admin
@@ -59,7 +62,7 @@
 
                     //Admin
                     case 4:
-                    usuarioLogeado.AutenticacionAdmin(usuarioLogeado);
+                    usuarioLogeado.AutenticacionAdmin(usuarioLogeado);  
 
                     break;
 
@@ -76,6 +79,17 @@
                 Console.WriteLine("Regresando al Menú...");
                 Thread.Sleep(2000);
                 Menu();
+            }
+
+            static void MostarInfoProd()
+            {
+                Console.WriteLine(" -Información de los productos: ");
+                foreach(Producto producto in productos_Maquina)
+                {
+                    Console.WriteLine($"\n{producto.Mostrar_Info}"); //Para cada producto mostrará la información
+                }
+                Console.WriteLine("\nPresiona una tecla para continuar...");
+                Console.ReadKey();
             }
             
         }
