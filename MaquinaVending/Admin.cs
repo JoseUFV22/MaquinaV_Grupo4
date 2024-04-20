@@ -117,14 +117,74 @@ namespace PracticaGrupo4
                     }
                     break;
                 }
-            }
-
-            catch (Exception ex)
+            }catch (Exception ex)
             {
                 Console.Clear();
                 Console.WriteLine("Error:" + ex.Message);
                 Añadir_Producto(productos_Maquina);
             }
+
+        static void Añadir_Varios_Productos(List<Producto> productos_Maquina)
+        {
+            int respuesta = 0;
+
+            try
+            {
+                do
+                {
+                    Console.WriteLine("Añadir varios productos[1] / Reponer varios productos[2]");
+                    Console.Write($"\n</{Program.nombreUsuario}/>>> ");
+                    respuesta = int.Parse(Console.ReadLine());
+                }
+                while(respuesta < 1 || respuesta > 2);
+                
+                switch (respuesta)
+                {
+                    case 1:
+                    if (productos_Maquina.Count == 12)
+                    {
+                        Console.WriteLine("No hay espacio en la Maquina Expendedora");
+                    }
+
+                    else
+                    {   
+                        Producto productoNuevo = new Producto();
+                        int r;
+                        do 
+                        {
+                            Console.Clear();
+                            Console.WriteLine("<<< Añadiendo un producto >>>");
+                            Console.Write("Introduce el ID del producto: ");
+                            productoNuevo.ID = int.Parse(Console.ReadLine());
+                            Console.Write("Introduce el nombre del producto: ");
+                            productoNuevo.Nombre = Console.ReadLine();
+                            Console.Write("Introduce la cantidad del producto: ");
+                            productoNuevo.Cantidad = int.Parse(Console.ReadLine());
+                            Console.Write("Introduce el precio del producto: ");
+                            productoNuevo.Precio = double.Parse(Console.ReadLine());
+                            Console.Write("Introduce la descripción del producto: ");
+                            productoNuevo.Descripcion = Console.ReadLine();
+
+                            productos_Maquina.Add(productoNuevo);
+                            Console.WriteLine($"[Producto: {productoNuevo.Nombre}, añadido]");
+                            Console.WriteLine("¿Desea seguir añadiendo productos?");
+                            Console.WriteLine("Sí [1] / No [2]");
+                            r = int.Parse(Console.ReadLine());
+
+                        }while(r > 0 && r < 2);
+
+                        Thread.Sleep(1500);
+                    }
+                    break;
+                }
+            }catch (Exception ex)
+            {
+                Console.Clear();
+                Console.WriteLine("Error:" + ex.Message);
+                Añadir_Varios_Productos(productos_Maquina);
+            }
+
+        }
         }
     }
 }
