@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2b6eNyA8zjmHdPrltRWyrx7oMZISRbHTe66I8PFZfeBn1VzAss4MMFrN3b+8eGmzweUDhDI581KdAlswr8NyXg==",
+  "dgSpecHash": "Hcs2XljKz4E5ZSUearkhNyh9jYb0AWkzdQ7LedQnhDLHSv/tVBqH4SnXDx4WCNxRVDiQU1PDDhGwz8PMzfyPvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Desktop\\POO\\documento_memoria_grupo_4\\PracticaGrupo4\\PracticaGrupo4.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\eljos\\Desktop\\UFV\\Programacion\\RepositorioPOO\\PracticaGrupo4\\PracticaGrupo4.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
