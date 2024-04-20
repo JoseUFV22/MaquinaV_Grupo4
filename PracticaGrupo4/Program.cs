@@ -13,7 +13,7 @@
 
         public static void Menu()
         {
-            //ffff
+            
             //Lee el nombre del usuario
             //string nombreUsuario = Environment.UserName;
             int respuestaMenu;
