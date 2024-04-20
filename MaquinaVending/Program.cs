@@ -11,6 +11,7 @@ namespace MaquinaVending
         static void Main(string[] args)
         {
             Console.WriteLine("xdlol");
+            Console.WriteLine("Ignaloll");
         }
     }
 }
