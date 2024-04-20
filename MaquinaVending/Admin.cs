@@ -123,7 +123,7 @@ namespace PracticaGrupo4
                 Console.WriteLine("Error:" + ex.Message);
                 Añadir_Producto(productos_Maquina);
             }
-
+        }
         static void Añadir_Varios_Productos(List<Producto> productos_Maquina)
         {
             int respuesta = 0;
@@ -185,6 +185,6 @@ namespace PracticaGrupo4
             }
 
         }
-        }
     }
 }
+
