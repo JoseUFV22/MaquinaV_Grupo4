@@ -1,7 +1,8 @@
 using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
 #pragma warning disable CS8603
-
+#pragma warning disable CS8604
+#pragma warning disable CS8600
 
 namespace PracticaGrupo4
 {
@@ -16,7 +17,61 @@ namespace PracticaGrupo4
 
 
         //Metodos
-        public virtual void Añadir_Producto(List<Producto> productos_maquina){}
+        public virtual void Añadir_Producto(List<Producto> productos_Maquina){}
+
+
+        public virtual void Comprar_Producto(List<Producto> productos_Maquina)
+        {
+            //Si hay productos
+            if (productos_Maquina.Count > 0)
+            {
+                Console.Clear();
+                Console.WriteLine("<<< Productos Disponibles >>>");
+                //Muestra los productos
+                foreach(Producto producto in productos_Maquina)
+                {
+                    Console.WriteLine($"\n{producto.Mostrar_Info_Completa()}");
+                }
+
+                //Producto vacio para encontrar el ID
+                Producto productoVacio = null;
+
+                Console.Write("\nElige un producto por su ID:");
+                int id_Elegido = int.Parse(Console.ReadLine());
+
+                foreach(Producto producto in productos_Maquina)
+                {
+                    if (producto.ID == id_Elegido)
+                    {
+                        productoVacio = producto;
+                    }
+                }
+
+                //Si se encuentra el producto
+                if (productoVacio != null)
+                {
+                    Console.WriteLine("DALE VITTO HAZ ALGO");
+                    Thread.Sleep(3000);
+                    
+                }
+
+                else
+                {
+                    Console.WriteLine("Producto no encontrado...");
+                    Thread.Sleep(1500);
+                    Comprar_Producto(productos_Maquina);
+                }
+            }
+
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("No hay productos en la maquina...");
+                Console.WriteLine("Regresando al menú...");
+                Thread.Sleep(2000);
+            }
+        }
+
 
         public Usuario AutenticacionAdmin(Usuario usuario)
         {

@@ -45,7 +45,8 @@ namespace PracticaGrupo4
                 switch (respuestaMenu)
                 {
                     case 1:
-                    
+                    usuarioLogeado.Comprar_Producto(productos_Maquina);
+                    Menu();
                     break;
 
                     case 2:
