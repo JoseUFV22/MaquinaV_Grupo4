@@ -52,6 +52,7 @@ namespace PracticaGrupo4
             //Si el usuario ya es Admin, no hace falta volver a autenticarse
             else if (usuario is Admin)
             {
+                Console.Clear();
                 Console.WriteLine("\nBienvenido Administrador");
                 return usuario;
             }

@@ -20,8 +20,11 @@ namespace PracticaGrupo4
             {
                 do
                 {
-                    Console.WriteLine("Añadir un nuevo producto[1] / Reponer un producto[2]");
+                    Console.Clear();
+                    Console.Write("<<< Añadir un nuevo producto[1] / Reponer un producto[2] >>>\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write($"\n</{Program.nombreUsuario}/>>> ");
+                    Console.ForegroundColor= ConsoleColor.White;
                     respuesta = int.Parse(Console.ReadLine());
                 }
                 while(respuesta < 1 || respuesta > 2);
@@ -58,8 +61,10 @@ namespace PracticaGrupo4
                     }
                     break;
 
+
                     case 2:
-                    Console.WriteLine("<<< Añadiendo existencias a un producto >>>");
+                    Console.Clear();
+                    Console.WriteLine("<<< Añadiendo existencias a un producto >>>\n");
 
                     //Si no hay productos
                     if (productos_Maquina.Count == 0)
@@ -81,7 +86,7 @@ namespace PracticaGrupo4
                         //Producto vacio para encontrar el ID
                         Producto productoVacio = null;
 
-                        Console.WriteLine("Elige un producto por su ID:");
+                        Console.Write("\nElige un producto por su ID:");
                         int id_Elegido = int.Parse(Console.ReadLine());
 
                         foreach(Producto producto in productos_Maquina)
@@ -98,13 +103,16 @@ namespace PracticaGrupo4
                             int cantidadNueva = int.Parse(Console.ReadLine());
                             productoVacio.Cantidad += cantidadNueva;
 
-                            Console.WriteLine($"{productoVacio.Nombre} ahora tiene: {productoVacio.Cantidad} unidades");
+                            Console.WriteLine($"\n{productoVacio.Nombre} ahora tiene: {productoVacio.Cantidad} unidades");
+                            Console.WriteLine("Regresando al Menú...");
                             Thread.Sleep(2500);
                         }
 
                         else
                         {
                             Console.WriteLine("Producto no encontrado...");
+                            Thread.Sleep(1500);
+                            Añadir_Producto(productos_Maquina);
                         }
                     }
                     break;

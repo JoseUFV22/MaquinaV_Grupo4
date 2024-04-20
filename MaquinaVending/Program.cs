@@ -49,8 +49,8 @@ namespace PracticaGrupo4
                     break;
 
                     case 2:
-                        MostarInfoProd(); //Muestra la info de todos los productos 
-                        Menu();
+                    MostarInfoProd();   //Muestra la info de todos los productos 
+                    Menu();
                     break;
 
                     //Admin
@@ -79,19 +79,21 @@ namespace PracticaGrupo4
                 Console.WriteLine("Regresando al Menú...");
                 Thread.Sleep(2000);
                 Menu();
+            }            
+        }
+
+        static void MostarInfoProd()
+        {
+            Console.Clear();
+            Console.WriteLine("\n<<< Información de los productos >>> ");
+
+            foreach(Producto producto in productos_Maquina)
+            {
+                Console.WriteLine($"\n{producto.Mostrar_Info_Completa()}");   //Para cada producto mostrará la información
             }
 
-            static void MostarInfoProd()
-            {
-                Console.WriteLine(" -Información de los productos: ");
-                foreach(Producto producto in productos_Maquina)
-                {
-                    Console.WriteLine($"\n{producto.Mostrar_Info}"); //Para cada producto mostrará la información
-                }
-                Console.WriteLine("\nPresiona una tecla para continuar...");
-                Console.ReadKey();
-            }
-            
+            Console.WriteLine("\nPresiona una tecla para continuar...");
+            Console.ReadKey();
         }
 
     }
