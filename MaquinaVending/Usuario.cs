@@ -50,7 +50,37 @@ namespace PracticaGrupo4
                 //Si se encuentra el producto
                 if (productoVacio != null)
                 {
-                    Console.WriteLine("DALE VITTO HAZ ALGO");
+                    Console.WriteLine($"\nHa seleccionado el producto: {productoVacio.Nombre}");
+                    Console.WriteLine($"\nCuesta: {productoVacio.Precio}");
+                    Console.WriteLine("<<< Elija un método de pago >>>");
+                    
+                    int metodoPago;
+
+                do
+                {
+                    Console.WriteLine("(1) Efectivo");
+                    Console.WriteLine("(2) Tarjeta");
+                    Console.WriteLine("(3) Salir");
+                    metodoPago = int.Parse(Console.ReadLine());
+
+                } while (metodoPago != 3);
+
+                switch(metodoPago)
+                {
+                    case 1:
+                        Console.WriteLine("Ha seleccionado el pago en efectivo");
+                    break;
+                        
+                    case 2:
+                        Console.WriteLine("Ha seleccionado el pago con tarjeta");
+                    break;
+
+                    case 3:
+                        Console.WriteLine("Saliendo...");
+                    break;
+
+                }
+
                     Thread.Sleep(3000);
                     
                 }
