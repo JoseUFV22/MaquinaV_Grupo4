@@ -64,7 +64,8 @@ namespace PracticaGrupo4
                     //Admin
                     case 4:
                     usuarioLogeado.AutenticacionAdmin(usuarioLogeado);  
-
+                    //FALTA EL METODO
+                    Menu();
                     break;
 
                     default:

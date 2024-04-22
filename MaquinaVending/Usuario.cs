@@ -58,7 +58,7 @@ namespace PracticaGrupo4
 
                     do
                     {
-                         //Ponemos las opciones de pago
+                        //Ponemos las opciones de pago
                         Console.WriteLine("(1) Efectivo");
                         Console.WriteLine("(2) Tarjeta");
                         Console.WriteLine("(3) Salir");
@@ -79,11 +79,9 @@ namespace PracticaGrupo4
                         case 3:
                         Console.WriteLine("Saliendo...");
                         break;
-
                     }
 
                     Thread.Sleep(3000);
-                    
                 }
 
                 else
