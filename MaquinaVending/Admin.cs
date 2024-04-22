@@ -117,13 +117,16 @@ namespace PracticaGrupo4
                     }
                     break;
                 }
-            }catch (Exception ex)
+            }
+            
+            catch (Exception ex)
             {
                 Console.Clear();
                 Console.WriteLine("Error:" + ex.Message);
                 Añadir_Producto(productos_Maquina);
             }
         }
+
         static void Añadir_Varios_Productos(List<Producto> productos_Maquina)
         {
             int respuesta = 0;
@@ -175,15 +178,17 @@ namespace PracticaGrupo4
 
                         Thread.Sleep(1500);
                     }
+
                     break;
                 }
-            }catch (Exception ex)
+            }
+            
+            catch (Exception ex)
             {
                 Console.Clear();
                 Console.WriteLine("Error:" + ex.Message);
                 Añadir_Varios_Productos(productos_Maquina);
             }
-
         }
     }
 }

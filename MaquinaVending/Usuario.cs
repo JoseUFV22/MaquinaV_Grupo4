@@ -56,31 +56,31 @@ namespace PracticaGrupo4
                     
                     int metodoPago;
 
-                do
-                {
-                    //Ponemos las opciones de pago
-                    Console.WriteLine("(1) Efectivo");
-                    Console.WriteLine("(2) Tarjeta");
-                    Console.WriteLine("(3) Salir");
-                    metodoPago = int.Parse(Console.ReadLine());
+                    do
+                    {
+                         //Ponemos las opciones de pago
+                        Console.WriteLine("(1) Efectivo");
+                        Console.WriteLine("(2) Tarjeta");
+                        Console.WriteLine("(3) Salir");
+                        metodoPago = int.Parse(Console.ReadLine());
 
-                } while (metodoPago != 3);
+                    }   while (metodoPago != 3);
 
-                switch(metodoPago)
-                {
-                    case 1:
+                    switch(metodoPago)
+                    {
+                        case 1:
                         Console.WriteLine("Ha seleccionado el pago en efectivo");
-                    break;
+                        break;
                         
-                    case 2:
+                        case 2:
                         Console.WriteLine("Ha seleccionado el pago con tarjeta");
-                    break;
+                        break;
 
-                    case 3:
+                        case 3:
                         Console.WriteLine("Saliendo...");
-                    break;
+                        break;
 
-                }
+                    }
 
                     Thread.Sleep(3000);
                     
