@@ -1,5 +1,6 @@
 using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 #pragma warning disable CS8603
 #pragma warning disable CS8604
 #pragma warning disable CS8600
@@ -18,6 +19,129 @@ namespace PracticaGrupo4
 
         //Metodos
         public virtual void Añadir_Producto(List<Producto> productos_Maquina){}
+
+
+        private void Otro_Producto(List<Producto> productos_Maquina)
+        {
+            Console.Clear();
+            Console.WriteLine("Quieres comprar otro producto? [1]SI / [2]NO");
+            int respuesta = int.Parse(Console.ReadLine());
+
+            if (respuesta == 1)
+            {
+                Comprar_Producto(productos_Maquina);
+            }
+
+            else if (respuesta == 2)
+            {
+                Console.WriteLine("Regresando al Menú...");
+                Thread.Sleep(2000);
+            }
+
+            else 
+            {
+                Console.WriteLine("Introduce una respuesta valida");
+                Otro_Producto(productos_Maquina);
+            }
+
+        }
+
+
+        private void Pagar_Efectivo(Producto producto_Elegido)
+        {
+            double precio = producto_Elegido.Precio;
+            double dineroIntroducido;
+
+            Console.Clear();
+            Console.WriteLine("Ha seleccionado el pago en efectivo");
+
+            do
+            {
+                if (precio > 0)
+                {
+                    Console.WriteLine($"Precio[{precio}], Introduce monedas de 0.10, 0.20, 0.50, 1 o 2 euros");
+                    dineroIntroducido = double.Parse(Console.ReadLine());
+                    precio = precio - dineroIntroducido;
+                }
+
+                else if (precio < 0)
+                {
+                    Console.WriteLine("\nProceso Completado...");
+                    Console.WriteLine($"Devolviendo Cambio [{precio * -1}]...");
+                    Thread.Sleep(3000);
+                    precio = 0;
+                }
+
+            } while(precio != 0);
+        }
+
+        private void Pagar_Tarjeta()
+        {
+
+            Console.Clear();
+            Console.WriteLine("Ha seleccionado el pago en Tarjeta");
+
+            try
+            {
+                int dia;
+                int mes;
+                int año;
+                int cvc;
+                long tarjeta;
+
+                Console.WriteLine("Introduce el Número de Tarjeta: ");
+                tarjeta = long.Parse(Console.ReadLine());
+
+                do
+                {
+
+                    Console.WriteLine("Introduce el día de la fecha de expiración: ");
+                    dia = int.Parse(Console.ReadLine());
+
+                } while(dia < 1 || dia > 31);
+
+                do
+                {
+                    
+                    Console.WriteLine("Introduce el mes de la fecha de expiración: ");
+                    mes = int.Parse(Console.ReadLine());
+
+                } while(mes < 1 || mes > 12);
+
+                do
+                {
+                    
+                    Console.WriteLine("Introduce el año de la fecha de expiración: ");
+                    año = int.Parse(Console.ReadLine());
+
+                } while(año < 2024 || año > 2049);
+                
+                do
+                {
+                    
+                    Console.WriteLine("Introduce el CVC ");
+                    cvc = int.Parse(Console.ReadLine());
+
+                } while(cvc < 99 || cvc > 999);
+
+                Console.WriteLine($"Introduce el nombre asociado: ");
+                string nombre = Console.ReadLine();
+
+                Console.WriteLine($"Nombre: {nombre}");
+                Console.WriteLine($"Tarjeta: {tarjeta}, Fecha: {dia}/{mes}/{año}, CVC: {cvc}");
+
+                Console.WriteLine("\nProducto Pagado...");
+
+                Thread.Sleep(2000);
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex}");
+                Thread.Sleep(1500);
+                Pagar_Tarjeta();
+            }
+        }
 
 
         public virtual void Comprar_Producto(List<Producto> productos_Maquina)
@@ -50,30 +174,34 @@ namespace PracticaGrupo4
                 //Si se encuentra el producto
                 if (productoVacio != null)
                 {
+                    Console.Clear();
                     Console.WriteLine($"\nHa seleccionado el producto: {productoVacio.Nombre}"); 
-                    Console.WriteLine($"\nCuesta: {productoVacio.Precio}"); //Mostramos el nombre y el precio del producto seleccionado
+                    Console.WriteLine($"Cuesta: {productoVacio.Precio}$");  //Mostramos el nombre y el precio del producto seleccionado
                     Console.WriteLine("<<< Elija un método de pago >>>");
                     
                     int metodoPago;
-
                     do
                     {
                         //Ponemos las opciones de pago
                         Console.WriteLine("(1) Efectivo");
                         Console.WriteLine("(2) Tarjeta");
-                        Console.WriteLine("(3) Salir");
+                        Console.WriteLine("(3) SALIR");
                         metodoPago = int.Parse(Console.ReadLine());
 
-                    }   while (metodoPago != 3);
+                    }   while (metodoPago < 1 || metodoPago > 3);
 
                     switch(metodoPago)
                     {
                         case 1:
-                        Console.WriteLine("Ha seleccionado el pago en efectivo");
+                        Pagar_Efectivo(productoVacio);
+                        productoVacio.Cantidad = productoVacio.Cantidad - 1;
+                        Otro_Producto(productos_Maquina);
                         break;
                         
                         case 2:
-                        Console.WriteLine("Ha seleccionado el pago con tarjeta");
+                        Pagar_Tarjeta();
+                        productoVacio.Cantidad = productoVacio.Cantidad - 1;
+                        Otro_Producto(productos_Maquina);
                         break;
 
                         case 3:
@@ -81,7 +209,7 @@ namespace PracticaGrupo4
                         break;
                     }
 
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
                 }
 
                 else
@@ -100,6 +228,7 @@ namespace PracticaGrupo4
                 Thread.Sleep(2000);
             }
         }
+
 
 
         public Usuario AutenticacionAdmin(Usuario usuario)

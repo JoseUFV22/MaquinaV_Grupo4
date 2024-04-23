@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5Syzg+1PdJXL2G4h5bLPl+diap12j7YqD3lZe/05WXCpgODzd9flrpfb87++mIIh1LDEzJw5Tn+fa/syFqwV4g==",
+  "dgSpecHash": "BxhRyEMm4AkyVQsJI0g5dfOpwSnf2mJLp+zbdkCFCV6ceMZkxlkqLmePMt4i7iVTz4PgiXVFwiXiiMh81ls+7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Desktop\\POO\\documento_memoria_grupo_4\\MaquinaVending\\MaquinaVending.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\eljos\\Desktop\\UFV\\Programacion\\RepositorioPOO\\documento_memoria_grupo_4\\MaquinaVending\\MaquinaVending.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

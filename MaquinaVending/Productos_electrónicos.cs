@@ -1,3 +1,8 @@
+#pragma warning disable CS8603
+#pragma warning disable CS8604
+#pragma warning disable CS8618
+
+
 namespace PracticaGrupo4
 {
     internal class Productos_electrónicos : Producto {
@@ -9,7 +14,7 @@ namespace PracticaGrupo4
         public bool Precargado { get; set; }
 
 
-        public Productos_electrónicos() { }
+        public Productos_electrónicos() {}
 
         public Productos_electrónicos (string tipo_de_materiales, bool pilas, bool precargado)
         {
