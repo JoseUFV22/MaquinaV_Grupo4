@@ -161,8 +161,13 @@ namespace PracticaGrupo4
                 //Producto vacio para encontrar el ID
                 Producto productoVacio = null;
 
-                Console.Write("\nElige un producto por su ID:");
+                Console.Write("\nElige un producto por su ID (Presione 1 para salir):");
                 int id_Elegido = int.Parse(Console.ReadLine());
+
+                if(id_Elegido == 1)
+                {
+                    Program.Menu(); //Le damos al usuario la opción de salir
+                }
 
                 foreach(Producto producto in productos_Maquina)
                 {

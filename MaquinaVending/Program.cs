@@ -76,7 +76,6 @@ namespace PracticaGrupo4
             
             catch (Exception ex)
             {
-                Console.Clear();
                 Console.WriteLine($"\nError: {ex.Message}");
                 Console.WriteLine("Regresando al Menú...");
                 Thread.Sleep(2000);
