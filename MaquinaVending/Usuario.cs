@@ -144,7 +144,7 @@ namespace PracticaGrupo4
         }
 
 
-        public virtual void Comprar_Producto(List<Producto> productos_Maquina)
+        public void Comprar_Producto(List<Producto> productos_Maquina)
         {
             //Si hay productos
             if (productos_Maquina.Count > 0)
