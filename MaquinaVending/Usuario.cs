@@ -1,4 +1,5 @@
 using System.ComponentModel.Design;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 #pragma warning disable CS8603
@@ -87,10 +88,10 @@ namespace PracticaGrupo4
                 int mes;
                 int año;
                 int cvc;
-                long tarjeta;
+                BigInteger tarjeta;
 
                 Console.WriteLine("Introduce el Número de Tarjeta: ");
-                tarjeta = long.Parse(Console.ReadLine());
+                tarjeta = BigInteger.Parse(Console.ReadLine());
 
                 do
                 {
@@ -132,7 +133,7 @@ namespace PracticaGrupo4
 
                 Console.WriteLine("\nProducto Pagado...");
 
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
             }
 
             catch (Exception ex)
