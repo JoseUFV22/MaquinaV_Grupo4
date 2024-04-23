@@ -64,7 +64,7 @@ namespace PracticaGrupo4
                     //Admin
                     case 4:
                     usuarioLogeado.AutenticacionAdmin(usuarioLogeado);  
-                    //FALTA EL METODO
+                    usuarioLogeado.Añadir_Varios_Productos(productos_Maquina);
                     Menu();
                     break;
 

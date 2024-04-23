@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MaquinaVending
-build_property.ProjectDir = C:\Users\eljos\Desktop\dddd\documento_memoria_grupo_4\MaquinaVending\
+build_property.ProjectDir = C:\Users\Mito\Desktop\documento_memoria_grupo_4\MaquinaVending\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

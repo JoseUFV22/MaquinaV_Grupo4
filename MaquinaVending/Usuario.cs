@@ -20,6 +20,7 @@ namespace PracticaGrupo4
 
         //Metodos
         public virtual void Añadir_Producto(List<Producto> productos_Maquina){}
+        public virtual void Añadir_Varios_Productos(List<Producto> productos_Maquina){}
 
 
         private void Otro_Producto(List<Producto> productos_Maquina)
