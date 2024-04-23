@@ -5,7 +5,8 @@
 
 namespace PracticaGrupo4
 {
-    internal class Productos_electrónicos : Producto {
+    internal class Productos_electrónicos : Producto
+    {
 
         public string Tipo_de_materiales { get; set; }
 
@@ -16,17 +17,30 @@ namespace PracticaGrupo4
 
         public Productos_electrónicos() {}
 
-        public Productos_electrónicos (string tipo_de_materiales, bool pilas, bool precargado)
+        public override string Mostrar_Info_Completa()
         {
+            string pilasSi;
+            string precargadoSi;
 
-            Tipo_de_materiales = tipo_de_materiales;
+            if (Pilas == true)
+            {
+                pilasSi = "SI";
+            }
+            else
+            {
+                pilasSi = "No";
+            }
 
-            Pilas = pilas;
+            if (Pilas == true)
+            {
+                precargadoSi = "SI";
+            }
+            else
+            {
+                precargadoSi = "No";
+            }
 
-            Precargado = precargado;
-
+            return $"{base.Mostrar_Info_Completa()}\n Materiales: {Tipo_de_materiales}, Pilas: {pilasSi}, Precargado: {precargadoSi}";
         }
-
-
     }
 }

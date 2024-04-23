@@ -4,7 +4,8 @@
 
 namespace PracticaGrupo4
 {
-    internal class Materiales_preciosos : Producto {
+    internal class Materiales_preciosos : Producto 
+    {
         
         public string Tipo_de_material {  get; set; }
 
@@ -12,16 +13,9 @@ namespace PracticaGrupo4
 
         public Materiales_preciosos() { }
 
-        public Materiales_preciosos(string tipo_de_material, int peso_en_gramos) 
+        public override string Mostrar_Info_Completa()
         {
-
-            Tipo_de_material = tipo_de_material;
-
-            Peso_en_gramos = peso_en_gramos;
-
+            return $"{base.Mostrar_Info_Completa()}\n Materiales: {Tipo_de_material},Peso: {Peso_en_gramos}g.";
         }
-
-
-
     }
 }

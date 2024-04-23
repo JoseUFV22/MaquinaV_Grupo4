@@ -13,7 +13,7 @@ namespace PracticaGrupo4
             return $"ID:[{ID}] Producto: [{Nombre}] Cantidad: [{Cantidad}]";
         }
 
-        public string Mostrar_Info_Completa()
+        public virtual string Mostrar_Info_Completa()
         {
             return $"ID:[{ID}] Producto:{Nombre} Cantidad:[{Cantidad}] Precio:[{Precio}$] Descripción:{Descripcion}";
         }

@@ -1,5 +1,6 @@
 #pragma warning disable CS8604
 #pragma warning disable CS8600
+#pragma warning disable CS8601
 
 using System.Collections;
 
@@ -40,9 +41,21 @@ namespace PracticaGrupo4
                     else
                     {   
                         Producto productoNuevo = new Producto();
+                        int tipo = 0;
 
-                        Console.Clear();
-                        Console.WriteLine("<<< Añadiendo Nuevo Producto >>>");
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("<<< Añadiendo Nuevo Producto >>>");
+                            Console.Write("Que tipo de producto es? [1/Alimenticio 2/Electrónico 3/Precioso]:");
+                            tipo = int.Parse(Console.ReadLine());
+
+                        }while (tipo < 1 || tipo > 3);
+
+                        if (tipo == 1){productoNuevo = new Productos_Alimenticios();}
+                        else if (tipo == 2){productoNuevo = new Productos_electrónicos();}
+                        else if (tipo == 3){productoNuevo = new Materiales_preciosos();}
+                        
                         Console.Write("Introduce el ID del producto: ");
                         productoNuevo.ID = int.Parse(Console.ReadLine());
                         Console.Write("Introduce el nombre del producto: ");
@@ -53,6 +66,48 @@ namespace PracticaGrupo4
                         productoNuevo.Precio = double.Parse(Console.ReadLine());
                         Console.Write("Introduce la descripción del producto: ");
                         productoNuevo.Descripcion = Console.ReadLine();
+
+                        if (productoNuevo is Productos_Alimenticios)
+                        {
+                            Console.Write("Introduce las calorías del producto: ");
+                            ((Productos_Alimenticios)productoNuevo).Calorias = int.Parse(Console.ReadLine());
+                            Console.Write("Introduce el contenido graso del producto: ");
+                            ((Productos_Alimenticios)productoNuevo).Contenido_de_grasa = int.Parse(Console.ReadLine());
+                            Console.Write("Introduce los azúcares del producto: ");
+                            ((Productos_Alimenticios)productoNuevo).Contenido_de_azucar = int.Parse(Console.ReadLine());
+                        }
+
+                        else if (productoNuevo is Productos_electrónicos)
+                        {
+                            int respuestaPila = 0;
+                            int respuestaCarga = 0;
+                            Console.Write("Introduce el material del producto: ");
+                            ((Productos_electrónicos)productoNuevo).Tipo_de_materiales = Console.ReadLine();
+
+                            do
+                            {
+                                Console.Write("El producto contiene pilas? [1]SI / [2]NO ");
+                                respuestaPila = int.Parse(Console.ReadLine());
+                                if (respuestaPila == 1) {((Productos_electrónicos)productoNuevo).Pilas = true;}
+                                else if (respuestaPila == 2) {((Productos_electrónicos)productoNuevo).Pilas = false;}
+                            } while(respuestaPila < 1 || respuestaPila > 2);
+
+                            do
+                            {
+                                Console.Write("El producto esta precargado? [1]SI / [2]NO ");
+                                respuestaCarga = int.Parse(Console.ReadLine());
+                                if (respuestaCarga == 1) {((Productos_electrónicos)productoNuevo).Precargado = true;}
+                                else if (respuestaCarga == 2) {((Productos_electrónicos)productoNuevo).Precargado = false;}
+                            } while(respuestaCarga < 1 || respuestaCarga > 2);
+                        }
+
+                        else if (productoNuevo is Materiales_preciosos)
+                        {
+                            Console.Write("Introduce el materíal del producto: ");
+                            ((Materiales_preciosos)productoNuevo).Tipo_de_material = Console.ReadLine();
+                            Console.Write("Introduce el peso en gramos del producto: ");
+                            ((Materiales_preciosos)productoNuevo).Peso_en_gramos = int.Parse(Console.ReadLine());
+                        }
 
                         productos_Maquina.Add(productoNuevo);
                         Console.WriteLine($"[Producto: {productoNuevo.Nombre}, añadido]");
