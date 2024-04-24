@@ -22,7 +22,23 @@ namespace PracticaGrupo4
         public virtual void Anadir_Producto(List<Producto> productos_Maquina){}
         public virtual void Anadir_Varios_Productos(List<Producto> productos_Maquina){}
 
+        public void Eliminar_Producto_0(List<Producto> productos_Maquina)
+        {
+            Producto productoVacio_0 = null;
 
+            foreach (Producto producto in productos_Maquina)
+            {
+                if (producto.Cantidad == 0)
+                {
+                    productoVacio_0 = producto;
+                }
+            }
+
+            if (productoVacio_0 != null)
+            {
+                productos_Maquina.Remove(productoVacio_0);
+            }
+        }
 
 
         private void Otro_Producto(List<Producto> productos_Maquina)
