@@ -13,7 +13,7 @@ namespace PracticaGrupo4
 
         public override string Mostrar_Info_Completa()
         {
-            return $"{base.Mostrar_Info_Completa()}\n Calorías:{Calorias}, Contenido Graso{Contenido_de_grasa}, Azúcares: {Contenido_de_azucar}";
+            return $"{base.Mostrar_Info_Completa()}\nCalorías:{Calorias}, Contenido Graso{Contenido_de_grasa}, Azúcares: {Contenido_de_azucar}";
         }
     }
 }

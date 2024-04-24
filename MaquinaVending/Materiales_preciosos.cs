@@ -15,7 +15,7 @@ namespace PracticaGrupo4
 
         public override string Mostrar_Info_Completa()
         {
-            return $"{base.Mostrar_Info_Completa()}\n Materiales: {Tipo_de_material},Peso: {Peso_en_gramos}g.";
+            return $"{base.Mostrar_Info_Completa()}\nMateriales: {Tipo_de_material},Peso: {Peso_en_gramos}g.";
         }
     }
 }

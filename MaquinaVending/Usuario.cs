@@ -61,7 +61,8 @@ namespace PracticaGrupo4
             {
                 if (precio > 0)
                 {
-                    Console.WriteLine($"Precio[{precio}], Introduce monedas de 0.10, 0.20, 0.50, 1 o 2 euros");
+                    Console.WriteLine($"Precio[{precio}$]");
+                    Console.Write("Introduce monedas o billetes: ");
                     dineroIntroducido = double.Parse(Console.ReadLine());
                     precio = precio - dineroIntroducido;
                 }
@@ -79,7 +80,6 @@ namespace PracticaGrupo4
 
         private void Pagar_Tarjeta()
         {
-
             Console.Clear();
             Console.WriteLine("Ha seleccionado el pago en Tarjeta");
 
@@ -170,60 +170,64 @@ namespace PracticaGrupo4
                     Program.Menu(); //Le damos al usuario la opción de salir
                 }
 
-                foreach(Producto producto in productos_Maquina)
-                {
-                    if (producto.ID == id_Elegido)
-                    {
-                        productoVacio = producto;
-                    }
-                }
-
-                //Si se encuentra el producto
-                if (productoVacio != null)
-                {
-                    Console.Clear();
-                    Console.WriteLine($"\nHa seleccionado el producto: {productoVacio.Nombre}"); 
-                    Console.WriteLine($"Cuesta: {productoVacio.Precio}$");  //Mostramos el nombre y el precio del producto seleccionado
-                    Console.WriteLine("<<< Elija un método de pago >>>");
-                    
-                    int metodoPago;
-                    do
-                    {
-                        //Ponemos las opciones de pago
-                        Console.WriteLine("(1) Efectivo");
-                        Console.WriteLine("(2) Tarjeta");
-                        Console.WriteLine("(3) SALIR");
-                        metodoPago = int.Parse(Console.ReadLine());
-
-                    }   while (metodoPago < 1 || metodoPago > 3);
-
-                    switch(metodoPago)
-                    {
-                        case 1:
-                        Pagar_Efectivo(productoVacio);
-                        productoVacio.Cantidad = productoVacio.Cantidad - 1;
-                        Otro_Producto(productos_Maquina);
-                        break;
-                        
-                        case 2:
-                        Pagar_Tarjeta();
-                        productoVacio.Cantidad = productoVacio.Cantidad - 1;
-                        Otro_Producto(productos_Maquina);
-                        break;
-
-                        case 3:
-                        Console.WriteLine("Saliendo...");
-                        break;
-                    }
-
-                    Thread.Sleep(2000);
-                }
-
                 else
                 {
-                    Console.WriteLine("Producto no encontrado...");
-                    Thread.Sleep(1500);
-                    Comprar_Producto(productos_Maquina);
+                    foreach(Producto producto in productos_Maquina)
+                    {
+                        if (producto.ID == id_Elegido)
+                        {
+                            productoVacio = producto;
+                        }
+                    }
+
+                    //Si se encuentra el producto
+                    if (productoVacio != null)
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"\nHa seleccionado el producto: {productoVacio.Nombre}"); 
+                        Console.WriteLine($"Cuesta: {productoVacio.Precio}$");  //Mostramos el nombre y el precio del producto seleccionado
+                        Console.WriteLine("\n<<< Elija un método de pago >>>");
+                    
+                        int metodoPago;
+                        do
+                        {
+                            //Ponemos las opciones de pago
+                            Console.WriteLine("(1) Efectivo");
+                            Console.WriteLine("(2) Tarjeta");
+                            Console.WriteLine("(3) SALIR");
+                            metodoPago = int.Parse(Console.ReadLine());
+
+                        }   while (metodoPago < 1 || metodoPago > 3);
+
+                        switch(metodoPago)
+                        {
+                            case 1:
+                            Pagar_Efectivo(productoVacio);
+                            productoVacio.Cantidad = productoVacio.Cantidad - 1;
+                            Otro_Producto(productos_Maquina);
+                            break;
+                        
+                            case 2:
+                            Pagar_Tarjeta();
+                            productoVacio.Cantidad = productoVacio.Cantidad - 1;
+                            Otro_Producto(productos_Maquina);
+                            break;
+
+                            case 3:
+                            Console.WriteLine("Saliendo...");
+                            break;
+                        }
+
+                        Thread.Sleep(2000);
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Producto no encontrado...");
+                        Thread.Sleep(1500);
+                        Comprar_Producto(productos_Maquina);
+                    }
                 }
             }
 

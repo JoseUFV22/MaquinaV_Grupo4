@@ -40,7 +40,7 @@ namespace PracticaGrupo4
                 precargadoSi = "No";
             }
 
-            return $"{base.Mostrar_Info_Completa()}\n Materiales: {Tipo_de_materiales}, Pilas: {pilasSi}, Precargado: {precargadoSi}";
+            return $"{base.Mostrar_Info_Completa()}\nMateriales: {Tipo_de_materiales}, Pilas: {pilasSi}, Precargado: {precargadoSi}";
         }
     }
 }
