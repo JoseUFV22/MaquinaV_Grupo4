@@ -19,8 +19,26 @@ namespace PracticaGrupo4
 
 
         //Metodos
-        public virtual void Añadir_Producto(List<Producto> productos_Maquina){}
-        public virtual void Añadir_Varios_Productos(List<Producto> productos_Maquina){}
+        public virtual void Anadir_Producto(List<Producto> productos_Maquina){}
+        public virtual void Anadir_Varios_Productos(List<Producto> productos_Maquina){}
+
+        public void Eliminar_Producto_0(List<Producto> productos_Maquina)
+        {
+            Producto productoVacio_0 = null;
+
+            foreach(Producto producto in productos_Maquina)
+            {
+                if (producto.Cantidad == 0)
+                {
+                    productoVacio_0 = producto;
+                }
+            }
+
+            if (productoVacio_0 != null)
+            {
+                productos_Maquina.Remove(productoVacio_0);
+            }
+        }
 
 
         private void Otro_Producto(List<Producto> productos_Maquina)
@@ -31,12 +49,14 @@ namespace PracticaGrupo4
 
             if (respuesta == 1)
             {
+                Eliminar_Producto_0(productos_Maquina);
                 Comprar_Producto(productos_Maquina);
             }
 
             else if (respuesta == 2)
             {
                 Console.WriteLine("Regresando al Menú...");
+                Console.WriteLine("No presiones ninguna tecla...");
                 Thread.Sleep(2000);
             }
 
@@ -70,7 +90,8 @@ namespace PracticaGrupo4
                 else if (precio < 0)
                 {
                     Console.WriteLine("\nProceso Completado...");
-                    Console.WriteLine($"Devolviendo Cambio [{precio * -1}]...");
+                    Console.WriteLine($"Devolviendo Cambio [{precio * -1}$]...");
+                    Console.WriteLine("No presiones ninguna tecla...");
                     Thread.Sleep(3000);
                     precio = 0;
                 }
@@ -215,6 +236,7 @@ namespace PracticaGrupo4
 
                             case 3:
                             Console.WriteLine("Saliendo...");
+                            Console.WriteLine("No presiones ninguna tecla...");
                             break;
                         }
 
@@ -236,6 +258,7 @@ namespace PracticaGrupo4
                 Console.Clear();
                 Console.WriteLine("No hay productos en la maquina...");
                 Console.WriteLine("Regresando al menú...");
+                Console.WriteLine("No presiones ninguna tecla...");
                 Thread.Sleep(2000);
             }
         }
@@ -268,6 +291,7 @@ namespace PracticaGrupo4
                     Console.Clear();
                     Console.WriteLine("Contraseña Incorrecta...");
                     Console.WriteLine("Regresando al Menú...");
+                    Console.WriteLine("No presiones ninguna tecla...");
                     Thread.Sleep(2000);
                     return new Cliente();                //Se identifica al usuario como Cliente
                 }
@@ -287,6 +311,7 @@ namespace PracticaGrupo4
                 Console.Clear();
                 Console.WriteLine("No tienes los privilegios suficientes...");
                 Console.WriteLine("Regresando al Menú...");
+                Console.WriteLine("No presiones ninguna tecla...");
                 Thread.Sleep(2000);
                 return usuario;
             }

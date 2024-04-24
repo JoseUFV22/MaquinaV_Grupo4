@@ -1,7 +1,6 @@
 #pragma warning disable CS8604
 #pragma warning disable CS8600
 #pragma warning disable CS8601
-
 using System.Collections;
 
 namespace PracticaGrupo4
@@ -13,7 +12,7 @@ namespace PracticaGrupo4
 
 
         //Metodos
-        public override void Añadir_Producto(List<Producto> productos_Maquina)
+        public override void Anadir_Producto(List<Producto> productos_Maquina)
         {
             int respuesta = 0;
 
@@ -112,6 +111,7 @@ namespace PracticaGrupo4
                         productos_Maquina.Add(productoNuevo);
                         Console.WriteLine($"[Producto: {productoNuevo.Nombre}, añadido]");
                         Console.WriteLine("Regresando al Menú...");
+                        Console.WriteLine("No presiones ninguna tecla...");
                         Thread.Sleep(1500);
                     }
                     break;
@@ -167,7 +167,7 @@ namespace PracticaGrupo4
                         {
                             Console.WriteLine("Producto no encontrado...");
                             Thread.Sleep(1500);
-                            Añadir_Producto(productos_Maquina);
+                            Anadir_Producto(productos_Maquina);
                         }
                     }
                     break;
@@ -178,11 +178,11 @@ namespace PracticaGrupo4
             {
                 Console.Clear();
                 Console.WriteLine("Error:" + ex.Message);
-                Añadir_Producto(productos_Maquina);
+                Anadir_Producto(productos_Maquina);
             }
         }
 
-        public override void Añadir_Varios_Productos(List<Producto> productos_Maquina)
+        public override void Anadir_Varios_Productos(List<Producto> productos_Maquina)
         {
             int respuesta = 0;
 
@@ -285,7 +285,7 @@ namespace PracticaGrupo4
                         {
                             Console.WriteLine("Producto no encontrado...");
                             Thread.Sleep(1500);
-                            Añadir_Producto(productos_Maquina);
+                            Anadir_Producto(productos_Maquina);
                         }
                     }
                     break;
@@ -296,7 +296,7 @@ namespace PracticaGrupo4
             {
                 Console.Clear();
                 Console.WriteLine("Error:" + ex.Message);
-                Añadir_Varios_Productos(productos_Maquina);
+                Anadir_Varios_Productos(productos_Maquina);
             }
         }
     }

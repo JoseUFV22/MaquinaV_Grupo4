@@ -45,11 +45,13 @@ namespace PracticaGrupo4
                 switch (respuestaMenu)
                 {
                     case 1:
+                    usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     usuarioLogeado.Comprar_Producto(productos_Maquina);
                     Menu();
                     break;
 
                     case 2:
+                    usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     MostarInfoProd();   //Muestra la info de todos los productos 
                     Menu();
                     break;
@@ -57,14 +59,16 @@ namespace PracticaGrupo4
                     //Admin
                     case 3:
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);    //Settea al usuario como "Admin" o "Cliente"
-                    usuarioLogeado.Añadir_Producto(productos_Maquina);
+                    usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
+                    usuarioLogeado.Anadir_Producto(productos_Maquina);
                     Menu();
                     break;
 
                     //Admin
                     case 4:
-                    usuarioLogeado.AutenticacionAdmin(usuarioLogeado);
-                    usuarioLogeado.Añadir_Varios_Productos(productos_Maquina);
+                    usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);
+                    usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
+                    usuarioLogeado.Anadir_Varios_Productos(productos_Maquina);
                     Menu();
                     break;
 
@@ -80,6 +84,7 @@ namespace PracticaGrupo4
                 Console.Clear();
                 Console.WriteLine($"\nError: {ex.Message}");
                 Console.WriteLine("Regresando al Menú...");
+                Console.WriteLine("No presiones ninguna tecla...");
                 Thread.Sleep(2000);
                 Menu();
             }            
