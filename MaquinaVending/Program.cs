@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.IO;
+using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PracticaGrupo4
 {
@@ -10,13 +12,15 @@ namespace PracticaGrupo4
 
         static void Main()
         {
+            string rutaArchivo = "productos.txt";
+            CargarProductosDeArchivo();
             Menu();
         }
 
         public static void Menu()
         {
             //Lee el nombre del usuario
-            //string nombreUsuario = Environment.UserName;
+            string nombreUsuario = Environment.UserName;
             int respuestaMenu;
 
             try
@@ -61,6 +65,7 @@ namespace PracticaGrupo4
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);    //Settea al usuario como "Admin" o "Cliente"
                     usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     usuarioLogeado.Anadir_Producto(productos_Maquina);
+                    CargarProductosEnArchivo(); //Cargamos los productos en el archivo
                     Menu();
                     break;
 
@@ -69,6 +74,7 @@ namespace PracticaGrupo4
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);
                     usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     usuarioLogeado.Anadir_Varios_Productos(productos_Maquina);
+                    CargarProductosEnArchivo(); //Cargamos los productos en el archivo
                     Menu();
                     break;
 
@@ -90,6 +96,7 @@ namespace PracticaGrupo4
             }            
         }
 
+
         static void MostarInfoProd()
         {
             Console.Clear();
@@ -104,6 +111,50 @@ namespace PracticaGrupo4
             Console.ReadKey();
         }
 
+        static void CargarProductosEnArchivo()
+        {
+            if (productos_Maquina.Count > 0) //Si tenemos productos
+            {
+                File.Create("productos.txt").Close(); //Creamos o sobreescribimos el archivo
+                foreach (Producto p in productos_Maquina)
+                {
+                    p.ToFile(); //Gurdamos cada contenido en el archivo
+                }
+            }
+        }
+        private static void CargarProductosDeArchivo()
+        {
+            if (File.Exists("productos.txt"))
+            {
+                using (StreamReader sr = new StreamReader("productos.txt"))
+                {
+                    string linea;
+
+                    while ((linea = sr.ReadLine()) != null)
+                    {
+
+                        string[] datos = linea.Split(';');
+
+                        string nombre = datos[0];
+                        int cantidad = int.Parse(datos[1]);
+                        double precio = double.Parse(datos[2]);
+                        string descripcion = datos[3];
+                        int id = int.Parse(datos[4]);
+
+                        Producto producto = new Producto(nombre, cantidad, precio, descripcion, id);
+
+                        productos_Maquina.Add(producto);
+
+                    }
+                }
+                Console.WriteLine("productos cargados correctamente.");
+            }
+            else
+            {
+                Console.WriteLine("El archivo de productos no existe. Creando uno nuevo...");
+                File.Create("productos.txt").Close();
+            }
+        }
     }
 }
 

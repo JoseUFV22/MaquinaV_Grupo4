@@ -7,6 +7,18 @@ namespace PracticaGrupo4
         public double Precio {get; set;}
         public string? Descripcion {get; set;}
         public int ID {get; set;}
+
+        public Producto() { }
+
+        public Producto(string nombre, int cantidad, double precio, string descripcion, int id)
+        {
+            Nombre = nombre;
+            Cantidad = cantidad;
+            Precio = precio;
+            Descripcion = descripcion;
+            ID = id;
+
+        }
         
         public string Mostrar_Info()
         {
@@ -16,6 +28,13 @@ namespace PracticaGrupo4
         public virtual string Mostrar_Info_Completa()
         {
             return $"ID:[{ID}] Producto:{Nombre} Cantidad:[{Cantidad}] Precio:[{Precio}$] Descripción:{Descripcion}";
+        }
+
+        public void ToFile()
+        {
+            StreamWriter sw = new StreamWriter("productos.txt", true);
+            sw.WriteLine($"{Nombre};{Cantidad};{Precio};{Descripcion};{ID}");
+            sw.Close();
         }
     }
 }
