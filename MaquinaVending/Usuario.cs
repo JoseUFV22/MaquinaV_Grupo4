@@ -302,6 +302,7 @@ namespace PracticaGrupo4
             {
                 Console.Clear();
                 Console.WriteLine("\nBienvenido Administrador");
+                Thread.Sleep(1500);
                 return usuario;
             }
 

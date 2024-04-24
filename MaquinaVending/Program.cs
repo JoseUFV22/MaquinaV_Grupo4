@@ -1,6 +1,9 @@
 ﻿using System.IO;
 using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
+#pragma warning disable CS8604
+#pragma warning disable CS8600
+#pragma warning disable CS8601
 
 namespace PracticaGrupo4
 {
@@ -19,8 +22,6 @@ namespace PracticaGrupo4
 
         public static void Menu()
         {
-            //Lee el nombre del usuario
-            string nombreUsuario = Environment.UserName;
             int respuestaMenu;
 
             try

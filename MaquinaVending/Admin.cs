@@ -233,10 +233,10 @@ namespace PracticaGrupo4
 
                         Thread.Sleep(1500);
                     }
-
                     break;
+
                     case 2:
-                        Console.Clear();
+                    Console.Clear();
                     Console.WriteLine("<<< Añadiendo existencias a un producto >>>\n");
 
                     //Si no hay productos
@@ -250,43 +250,50 @@ namespace PracticaGrupo4
 
                     else
                     {
-                        //Muestra todos los productos
-                        foreach (Producto producto in productos_Maquina)
+                        int b = 1;
+                        do
                         {
-                            Console.WriteLine(producto.Mostrar_Info());
-                        }
-
-                        //Producto vacio para encontrar el ID
-                        Producto productoVacio = null;
-
-                        Console.Write("\nElige un producto por su ID:");
-                        int id_Elegido = int.Parse(Console.ReadLine());
-
-                        foreach(Producto producto in productos_Maquina)
-                        {
-                            if (producto.ID == id_Elegido)
+                            //Muestra todos los productos
+                            foreach (Producto producto in productos_Maquina)
                             {
-                                productoVacio = producto;
+                                Console.WriteLine(producto.Mostrar_Info());
                             }
-                        }
 
-                        if (productoVacio != null)
-                        {
-                            Console.WriteLine("Cuantas unidades quieres añadir: ");
-                            int cantidadNueva = int.Parse(Console.ReadLine());
-                            productoVacio.Cantidad += cantidadNueva;
+                            //Producto vacio para encontrar el ID
+                            Producto productoVacio = null;
 
-                            Console.WriteLine($"\n{productoVacio.Nombre} ahora tiene: {productoVacio.Cantidad} unidades");
-                            Console.WriteLine("Regresando al Menú...");
-                            Thread.Sleep(2500);
-                        }
+                            Console.Write("\nElige un producto por su ID:");
+                            int id_Elegido = int.Parse(Console.ReadLine());
 
-                        else
-                        {
-                            Console.WriteLine("Producto no encontrado...");
-                            Thread.Sleep(1500);
-                            Anadir_Producto(productos_Maquina);
-                        }
+                            foreach(Producto producto in productos_Maquina)
+                            {
+                                if (producto.ID == id_Elegido)
+                                {
+                                    productoVacio = producto;
+                                }
+                            }
+
+                            if (productoVacio != null)
+                            {
+                                Console.WriteLine("Cuantas unidades quieres añadir: ");
+                                int cantidadNueva = int.Parse(Console.ReadLine());
+                                productoVacio.Cantidad += cantidadNueva;
+
+                                Console.WriteLine($"\n{productoVacio.Nombre} ahora tiene: {productoVacio.Cantidad} unidades");
+                                Console.WriteLine("Quieres añadir más unidades? [1/SI] [2/NO]");
+                                b = int.Parse(Console.ReadLine());
+                                Thread.Sleep(2500);
+                            }
+
+                            else
+                            {
+                                b = 0;
+                                Console.WriteLine("Producto no encontrado...");
+                                Thread.Sleep(1500);
+                                Anadir_Producto(productos_Maquina);
+                            }
+
+                        }while(b > 0 && b < 2);
                     }
                     break;
                 }
