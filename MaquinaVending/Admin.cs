@@ -46,7 +46,7 @@ namespace PracticaGrupo4
                         {
                             Console.Clear();
                             Console.WriteLine("<<< Añadiendo Nuevo Producto >>>");
-                            Console.Write("Que tipo de producto es? [1/Alimenticio 2/Electrónico 3/Precioso]:");
+                            Console.Write("Que tipo de producto es? [1/Alimenticio 2/Electrónico 3/Precioso]:"); //damos a elegir que tipo de producto vamos a añadir
                             tipo = int.Parse(Console.ReadLine());
 
                         }while (tipo < 1 || tipo > 3);
