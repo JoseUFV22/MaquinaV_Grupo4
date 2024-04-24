@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Source\\Repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending.csproj": {}
+    "C:\\Users\\usuario\\source\\repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending\\MaquinaVending.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Source\\Repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending.csproj": {
+    "C:\\Users\\usuario\\source\\repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending\\MaquinaVending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\source\\repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending\\MaquinaVending.csproj",
         "projectName": "MaquinaVending",
-        "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\MaquinaV_Grupo4\\MaquinaVending\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\source\\repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending\\MaquinaVending.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\source\\repos\\MaquinaV_Grupo4\\MaquinaVending\\MaquinaVending\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
