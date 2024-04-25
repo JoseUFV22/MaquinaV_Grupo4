@@ -15,7 +15,6 @@ namespace PracticaGrupo4
 
         static void Main()
         {
-            string rutaArchivo = "productos.txt";
             CargarProductosDeArchivo();
             Menu();
         }
@@ -57,7 +56,7 @@ namespace PracticaGrupo4
 
                     case 2:
                     usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
-                    MostarInfoProd();   //Muestra la info de todos los productos 
+                    MostarInfoProd();     //Muestra la info de todos los productos 
                     Menu();
                     break;
 
@@ -66,7 +65,7 @@ namespace PracticaGrupo4
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);    //Settea al usuario como "Admin" o "Cliente"
                     usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     usuarioLogeado.Anadir_Producto(productos_Maquina);
-                    CargarProductosEnArchivo(); //Cargamos los productos en el archivo
+                    CargarProductosEnArchivo();   //Cargamos los productos en el archivo
                     Menu();
                     break;
 
@@ -75,7 +74,7 @@ namespace PracticaGrupo4
                     usuarioLogeado = usuarioLogeado.AutenticacionAdmin(usuarioLogeado);
                     usuarioLogeado.Eliminar_Producto_0(productos_Maquina);
                     usuarioLogeado.Anadir_Varios_Productos(productos_Maquina);
-                    CargarProductosEnArchivo(); //Cargamos los productos en el archivo
+                    CargarProductosEnArchivo();    //Cargamos los productos en el archivo
                     Menu();
                     break;
 
@@ -88,12 +87,21 @@ namespace PracticaGrupo4
             
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine($"\nError: {ex.Message}");
-                Console.WriteLine("Regresando al Menú...");
-                Console.WriteLine("No presiones ninguna tecla...");
-                Thread.Sleep(2000);
-                Menu();
+                if (ex.Message.Contains("'minValue' cannot be greater than maxValue"))
+                {
+                    Console.Clear();
+                    Menu();
+                }
+                
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine($"\nError: {ex.Message}");
+                    Console.WriteLine("Regresando al Menú...");
+                    Console.WriteLine("No presiones ninguna tecla...");
+                    Thread.Sleep(2000);
+                    Menu();
+                }
             }            
         }
 
