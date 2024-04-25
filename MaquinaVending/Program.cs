@@ -78,7 +78,7 @@ namespace PracticaGrupo4
                     Menu();
                     break;
 
-                    default:
+                    default: 
                     Console.WriteLine("\nSaliendo...");
                     break;
                 }
