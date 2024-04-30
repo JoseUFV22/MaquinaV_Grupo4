@@ -16,6 +16,13 @@ namespace PracticaGrupo4
 
 
         public Productos_electrónicos() {}
+        public Productos_electrónicos(string nombre, int cantidad, double precio, string descripcion, int id,string tipomaterial, bool pilas, bool precargado)
+        : base(nombre, cantidad, precio, descripcion, id)
+        {
+            Pilas = pilas;
+            Precargado = precargado;
+            Tipo_de_materiales = tipomaterial;
+        }
 
         public override string Mostrar_Info_Completa()
         {
@@ -31,7 +38,7 @@ namespace PracticaGrupo4
                 pilasSi = "No";
             }
 
-            if (Pilas == true)
+            if (Precargado == true)
             {
                 precargadoSi = "SI";
             }
@@ -41,6 +48,12 @@ namespace PracticaGrupo4
             }
 
             return $"{base.Mostrar_Info_Completa()}\nMateriales: {Tipo_de_materiales}, Pilas: {pilasSi}, Precargado: {precargadoSi}";
+        }
+        public override void ToFile()
+        {
+            StreamWriter sw = new StreamWriter("productos.csv", true);
+            sw.WriteLine($"{Nombre};{Cantidad};{Precio};{Descripcion};{ID};{Tipo_de_materiales};{Pilas};{Precargado};Producto_Electronico");
+            sw.Close();
         }
     }
 }

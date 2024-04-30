@@ -124,7 +124,7 @@ namespace PracticaGrupo4
         {
             if (productos_Maquina.Count > 0) //Si tenemos productos
             {
-                File.Create("productos.txt").Close(); //Creamos o sobreescribimos el archivo
+                File.Create("productos.csv").Close(); //Creamos o sobreescribimos el archivo
                 foreach (Producto p in productos_Maquina)
                 {
                     p.ToFile(); //Gurdamos cada contenido en el archivo
@@ -133,9 +133,9 @@ namespace PracticaGrupo4
         }
         private static void CargarProductosDeArchivo()
         {
-            if (File.Exists("productos.txt"))
+            if (File.Exists("productos.csv"))
             {
-                using (StreamReader sr = new StreamReader("productos.txt"))
+                using (StreamReader sr = new StreamReader("productos.csv"))
                 {
                     string linea;
 
@@ -143,16 +143,21 @@ namespace PracticaGrupo4
                     {
 
                         string[] datos = linea.Split(';');
-
-                        string nombre = datos[0];
-                        int cantidad = int.Parse(datos[1]);
-                        double precio = double.Parse(datos[2]);
-                        string descripcion = datos[3];
-                        int id = int.Parse(datos[4]);
-
-                        Producto producto = new Producto(nombre, cantidad, precio, descripcion, id);
-
-                        productos_Maquina.Add(producto);
+                        if (datos[7] == "Material_Precioso") 
+                        {
+                            Materiales_preciosos p = new Materiales_preciosos((datos[0]), int.Parse(datos[1]), double.Parse(datos[2]), datos[3], int.Parse(datos[4]), datos[5], int.Parse(datos[6]));
+                            productos_Maquina.Add(p);
+                        }
+                        else if (datos[8] == "Producto_Electronico")
+                        {
+                            Productos_electrónicos p = new Productos_electrónicos((datos[0]), int.Parse(datos[1]), double.Parse(datos[2]), datos[3], int.Parse(datos[4]), datos[5], bool.Parse(datos[6]), bool.Parse(datos[7]));
+                            productos_Maquina.Add(p);
+                        }
+                        else if (datos[9] == "Producto_Alimenticio")
+                        {
+                            Productos_Alimenticios p = new Productos_Alimenticios((datos[0]), int.Parse(datos[1]), double.Parse(datos[2]), datos[3], int.Parse(datos[4]), int.Parse(datos[5]), int.Parse(datos[6]), int.Parse(datos[7]), int.Parse(datos[8]));
+                            productos_Maquina.Add(p);
+                        }
 
                     }
                 }
@@ -161,7 +166,7 @@ namespace PracticaGrupo4
             else
             {
                 Console.WriteLine("El archivo de productos no existe. Creando uno nuevo...");
-                File.Create("productos.txt").Close();
+                File.Create("productos.csv").Close();
             }
         }
     }

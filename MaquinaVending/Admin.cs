@@ -74,7 +74,9 @@ namespace PracticaGrupo4
                             ((Productos_Alimenticios)productoNuevo).Contenido_de_grasa = int.Parse(Console.ReadLine());
                             Console.Write("Introduce los azúcares del producto: ");
                             ((Productos_Alimenticios)productoNuevo).Contenido_de_azucar = int.Parse(Console.ReadLine());
-                        }
+                            Console.Write("Introduce el peso neto: ");
+                            ((Productos_Alimenticios)productoNuevo).Peso_neto = int.Parse(Console.ReadLine());
+                            }
 
                         else if (productoNuevo is Productos_electrónicos)
                         {

@@ -30,11 +30,6 @@ namespace PracticaGrupo4
             return $"ID:[{ID}] Producto:{Nombre} Cantidad:[{Cantidad}] Precio:[{Precio}$] Descripción:{Descripcion}";
         }
 
-        public void ToFile()
-        {
-            StreamWriter sw = new StreamWriter("productos.txt", true);
-            sw.WriteLine($"{Nombre};{Cantidad};{Precio};{Descripcion};{ID}");
-            sw.Close();
-        }
+        public virtual void ToFile() {}
     }
 }
